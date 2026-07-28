@@ -46,8 +46,18 @@ public class bitmanipulation {
 
     public static void clearlastibits(int num2){
         int i=3;
-        int newnum3=(num2 & ~(1<<i));
+        int newnum3=(num2 &((-1)<<i));
         System.out.println("The new number after clearing the last i bits is: "+newnum3);
+    }
+
+    public static void clearrangeofbits(int num2){
+        int i=2;
+        int j=4;
+        int a=((-1)<<(j+1));
+        int b=((1<<i)-1);
+        int bitmask=(a|b);
+        int newnum4=(num2 & bitmask);
+        System.out.println("The new number after clearing the range of bits is: "+newnum4);
     }
 
 
@@ -87,13 +97,17 @@ public class bitmanipulation {
 
         }
         oddoreven(5);
-        int num2=5;
+        int num2=10;
         getithbit(num2);
         
         setithbit(num2);
         clearithbit(num2);
         updateithbit(num2);
         clearlastibits(num2);
+        clearrangeofbits(num2);
+
+
+
     }
 }
 
