@@ -33,11 +33,23 @@ public class bitmanipulation {
         System.out.println("The new number after clearing the ith bit is: "+newnum2);
     }
 
-    public static void clearithbits(int num2){
+    public static void updateithbit(int num2){
         int i=2;
-        int newnum=(num2 & (1<<i));
-        System.out.println("The new number after clearing the ith bits is: "+newnum);
+        int newbit=0;
+        if (newbit==1){
+            setithbit(num2);
+        }
+        else{
+            clearithbit(num2);
+        }
     }
+
+    public static void clearlastibits(int num2){
+        int i=3;
+        int newnum3=(num2 & ~(1<<i));
+        System.out.println("The new number after clearing the last i bits is: "+newnum3);
+    }
+
 
 
 
@@ -75,12 +87,13 @@ public class bitmanipulation {
 
         }
         oddoreven(5);
-        int num2=15;
+        int num2=5;
         getithbit(num2);
         
         setithbit(num2);
         clearithbit(num2);
-        clearithbits(num2);
+        updateithbit(num2);
+        clearlastibits(num2);
     }
 }
 
