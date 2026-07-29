@@ -34,7 +34,6 @@ public class bitmanipulation {
     }
 
     public static void updateithbit(int num2){
-        int i=2;
         int newbit=0;
         if (newbit==1){
             setithbit(num2);
@@ -43,6 +42,21 @@ public class bitmanipulation {
             clearithbit(num2);
         }
     }
+
+    public static void powerof2(int num2){
+        if (num2<=0){
+            System.out.println("not a power of 2");
+        }
+        for (int i=0;i<31;i++){
+            if (num2==(1<<i)){
+                System.out.println("The number is a power of 2");
+                return;
+            }
+            System.out.println("not a power of 2");
+        }
+    }
+
+
 
     public static void clearlastibits(int num2){
         int i=3;
@@ -59,6 +73,32 @@ public class bitmanipulation {
         int newnum4=(num2 & bitmask);
         System.out.println("The new number after clearing the range of bits is: "+newnum4);
     }
+
+    public static void powerof2 (num2){
+    if (num2 <= 0){
+        System.out.println("not a power of 2");
+        return;
+    }
+    
+    for (int i = 0; i < 31; i++){
+        if (num2 == (1 << i)){
+            System.out.println("The number is a power of 2");
+            return;
+        }
+    }
+    
+    // Moved outside the loop! It only prints here if the loop finishes without returning.
+    System.out.println("not a power of 2");
+    }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -84,6 +124,7 @@ public class bitmanipulation {
         System.out.println(5<<2);
         System.out.println(5>>2);
         
+        
         int number=5;
         String binary=Integer.toBinaryString(number);
         System.out.println("Binary representation of "+number+" is "+binary);
@@ -105,6 +146,7 @@ public class bitmanipulation {
         updateithbit(num2);
         clearlastibits(num2);
         clearrangeofbits(num2);
+        powerof2(num2);
 
 
 
