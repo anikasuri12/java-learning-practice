@@ -44,16 +44,31 @@ public class bitmanipulation {
     }
 
     public static void powerof2(int num2){
-        if (num2<=0){
-            System.out.println("not a power of 2");
+    if (num2 <= 0){
+        System.out.println("not a power of 2");
+        return;
+    }
+    
+    for (int i = 0; i < 31; i++){
+        if (num2 == (1 << i)){
+            System.out.println("The number is a power of 2");
+            return;
         }
-        for (int i=0;i<31;i++){
-            if (num2==(1<<i)){
-                System.out.println("The number is a power of 2");
-                return;
+    }
+    
+    // Moved outside the loop! It only prints here if the loop finishes without returning.
+    System.out.println("not a power of 2");
+    } 
+
+    public static void countsetbits(int num3){
+        int count=0;
+        String binary=Integer.toBinaryString(num3);
+        for (int i=0;i<=binary.length()-1;i++){
+            if(binary.charAt(i)=='1'){
+                count++;
             }
-            System.out.println("not a power of 2");
         }
+        System.out.println("The number of set bits in the number is: "+count);
     }
 
 
@@ -74,24 +89,14 @@ public class bitmanipulation {
         System.out.println("The new number after clearing the range of bits is: "+newnum4);
     }
 
-    public static void powerof2 (num2){
-    if (num2 <= 0){
-        System.out.println("not a power of 2");
-        return;
-    }
-    
-    for (int i = 0; i < 31; i++){
-        if (num2 == (1 << i)){
+    public static void poweroftwo(int n){
+        if ((n& (n-1))==0){
             System.out.println("The number is a power of 2");
-            return;
+        }
+        else{
+            System.out.println("The number is not a power of 2");
         }
     }
-    
-    // Moved outside the loop! It only prints here if the loop finishes without returning.
-    System.out.println("not a power of 2");
-    }
-
-
 
 
 
@@ -124,7 +129,7 @@ public class bitmanipulation {
         System.out.println(5<<2);
         System.out.println(5>>2);
         
-        
+        int n=16;
         int number=5;
         String binary=Integer.toBinaryString(number);
         System.out.println("Binary representation of "+number+" is "+binary);
@@ -138,15 +143,17 @@ public class bitmanipulation {
 
         }
         oddoreven(5);
+        int num3=15;
         int num2=10;
-        getithbit(num2);
-        
+        getithbit(num2); 
         setithbit(num2);
         clearithbit(num2);
         updateithbit(num2);
         clearlastibits(num2);
         clearrangeofbits(num2);
+        poweroftwo(n);
         powerof2(num2);
+        countsetbits(num3);
 
 
 
