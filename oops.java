@@ -13,9 +13,17 @@ public class oops {
         pen1.color="green";
         System.out.println(pen1.color);
 
+        Bankdetails user1=new Bankdetails();
+        user1.username="anika";
+        //user1.password="1234";                     // This will cause error coz password is private
+        user1.setpassword("1234"); //ab hojayega coz maine func bnaya jo class ke andr hee h 
+        System.out.println(user1.username);
+        
+        
     }
     
 }
+
 
 class Pen{
     String color;
@@ -28,4 +36,14 @@ class Pen{
     void settip(int newtip){
         tip=newtip;
     }
+}
+
+class Bankdetails{
+    public String username;
+    private String password;
+
+    public void setpassword(String pwd){
+        password=pwd;
+    }
+
 }
