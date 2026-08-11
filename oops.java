@@ -23,6 +23,9 @@ public class oops {
         Pencil pencil1=new Pencil();
         pencil1.setLength(10);
         System.out.println(pencil1.getLength());
+
+        //constructors ka seekhri
+        Student s1=new Student();
     }
     
 }
@@ -70,3 +73,13 @@ class Pencil{
 
 // encapsulation- ek single capsule,entity ie class me prop and methods saathme bnana
 //  and bohot faltu ya bohot sensitive data ko hide krna- we hide using access specifiers
+
+//constructors
+class Student{
+    String name;
+    int rollno;
+
+    Student(){        //constructor- same name as class, no return type, automatically called when object is created
+        System.out.println("constructor called");
+    }
+}
