@@ -26,8 +26,34 @@ public class oops {
 
         //constructors ka seekhri
         Student s1=new Student();
+
+        //copy constructor ka seekhri
+        Human h1=new Human();     //h1 naam ka object bnaya Human class me
+        h1.name="abc";
+        h1.age=20;
+        h1.password="lalalal";
+
+        Human h2=new Human(h1);  //h2 naam ka object bnaya jisme h1 ka data copy so this is copy constructor
+        h2.password="bruh";
+
+        System.out.println("details of h1 are:" +h1.name+ " "+h1.age+ " "+ h1.password);
+        System.out.println("details of h2 are:" +h2.name+ " "+h2.age+ " "+ h2.password);
     }
     
+}
+
+class Human{
+    String name;
+    int age;
+    String password;
+
+    Human() {      //ye h1 hai
+    }
+
+    Human(Human h1){       //ye h copy constructor jisme h1 ka data copy ho rha h h2 me
+        this.name=h1.name;
+        this.age=h1.age;
+    }
 }
 
 
@@ -83,3 +109,8 @@ class Student{
         System.out.println("constructor called");
     }
 }
+
+
+
+
+
